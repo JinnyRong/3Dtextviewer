@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>responsive</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #controlPanel {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: bisque;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        #controlPanel input,
+        #controlPanel select,
+        #controlPanel button {
+            margin: 5px;
+            display: block;
+        }
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .slide-value {
+            min-width: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="controlPanel">
+        <div>
+            <label for="textInput">Text:</label>
+            <input type="text" id="textInput" placeholder="Enter text">
+        </div>
+
+        <div class="slider-container">
+            <label for="depthInput">Extrude:</label>
+            <input type="range" id="depthInput" min="0" max="200" step="0.1" value="0.5">
+            <span id="depthValue" class="slider-value">10</span>
+        </div>
+
+        <div class="slider-container">
+            <label for="sizeInput">Size:</label>
+            <input type="range" id="sizeInput" min="0" max="200" step="0.1" value="0.5">
+            <span id="sizeValue" class="slider-value">10</span>
+        </div>
+
+        <div>
+            <label for="colorInput">Color:</label>
+            <Input type="color" id="colorInput" value="#ffffff">
+        </div>
+        <div class="slider-container">
+            <label for="roughnessInput">Roughness:</label>
+            <input type="range" id="roughnessInput" min="0" max="1" step="0.1" value="0.5">
+            <span id="roughnessValue" class="slider-value">0.5</span>
+        </div>
+        <div class="slider-container">
+            <label for="metalnessInput">Metalness:</label>
+            <input type="range" id="metalnessInput" min="0" max="1" step="0.1" value="0.5">
+            <span id="metalnessValue" class="slider-value">0.5</span>
+        </div>
+
+    </div>
+
+    <script type="importmap">
+        {
+            "imports":{
+                "three": "./three.module.min.js",
+                "FontLoader": "./Fontloader.js",
+                "TextGeometry": "./TextGeometry.js",
+                "OrbitControls": "./OrbitControls.js"
+            }
+        }
+    </script>
+    <script src="./text.js" type="module"></script>
+</body>
